@@ -26,20 +26,8 @@ function generateHTML(team) {
     <main>
         <section class="container-fluid justify-content-center mt-3 pt-1">
             <div class="container pt-2 justify-content-center">
-                <div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
-                    <div class="card-body card-header py-3">
-                        <h5 class="card-title">Sarah Hollingsworth</h5>
-                        <h6 class="card-title">Bug Creator</h6>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush border m-1">
-                            <li class="list-group-item">ID: 1</li>
-                            <li class="list-group-item">Email: whatever@gmail.com</li>
-                            <li class="list-group-item">Github: sahhollingsworth</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                ${renderEmployee(team)}
+            </div>
         </section>
     </main>
 </body>
@@ -47,6 +35,38 @@ function generateHTML(team) {
 return html;
 }
 
-// funtion to create html person objects 
+// add ${renderEmployees(team)} to html template where cards will be generated
+
+// funtion to create html cards from person object data in the team array
+function renderEmployee(team) {
+`<div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
+    <div class="card-body card-header py-3">
+        <h5 class="card-title">${team[i].getName()}</h5>
+        <h6 class="card-title">${team[i].getRole()}</h6>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush border m-1">
+            <li class="list-group-item">ID: ${team[i].getId()}</li>
+            <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}">${team[i].getEmail()}</a></li>
+        </ul>
+    </div>
+</div>`
+}
+
+// function to add class-specific elements to the card list in addition to Employee elements. 'Employee' used as placeholder
+function renderExtendedInfo(Employee) {
+    // Evaluate the array for each (employee) object. For each object, get the Role value
+    switch(Employee.getRole()) {
+        // if role = Manager then do add the officeNumber element li
+        case "Manager":
+            return `<li class="list-group-item">Office Number: ${Employee.getofficeNumber()}</li>`
+        // if role = Engineer then add the githubUser element as a li
+        case "Engineer":
+            return `<li class="list-group-item">Github: <a href="https://github.com/${Employee.getGithubUser()}" target="_blank">${teamMember.getGithubUser()}</a></li>`
+        // if role = Intern then add the school element li
+        case "Intern":
+            return `<li class="list-group-item">School: ${Employee.getSchool()}</li>`
+    }
+}
 
 module.exports = generateHTML;
