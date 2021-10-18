@@ -1,4 +1,4 @@
-// Generate the actual teamprofilepage html file using the data (team array) from command line user input
+// Generate the actual teampage.html file output by adding the data (team array) into html provided in template literal
 function generateHTML(team) {
     let html =
 `<!DOCTYPE html>
