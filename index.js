@@ -165,7 +165,7 @@ function buildPage(file, data) {
             console.log("An unknown error occurred.")
         }
         else {
-            console.log("Your Team Profile page has been created successfully!")
+            console.log("Your teampage.html file has been created successfully!")
         }
     })
 }
