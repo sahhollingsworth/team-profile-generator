@@ -26,7 +26,7 @@ function addManager() {
             {
                 type: "input",
                 message: "What is the team Manager's employee ID number?",
-                name: "employeeId",
+                name: "id",
             },
             {
                 type: "input",
@@ -61,11 +61,11 @@ function addEmployee () {
         {
             type: "input",
             message: "What is this team member's employee ID number?",
-            name: "employeeId",
+            name: "id",
         },
         {
             type: "input",
-            message: "What is this team member's ID email address?",
+            message: "What is this team member's email address?",
             name: "email",
         },
         {
@@ -89,7 +89,7 @@ function addEmployee () {
 }
 
 // Function to prompt engineer-specific questions in addition to employee questions
-function addEngineer () {
+function addEngineer (name, id, email) {
     inquirer
     // User input prompts
     .prompt([
@@ -102,7 +102,7 @@ function addEngineer () {
     // Evaluate user input (response)
     .then(response => {
         // create a new instance of a Engineer object type passing user input as arguments into constructor
-        const employeeEngineer = new Engineer(response.name, response.id, response.email, response.githubUser);
+        const employeeEngineer = new Engineer(name, id, email, response.githubUser);
         // Add this Engineer person object to the team array
         team.push(employeeEngineer);
         // call function that prompts if user done or wants to add another employee
@@ -111,7 +111,7 @@ function addEngineer () {
 }
 
 // Function to prompt intern-specific questions in addition to standard employee questions
-function addIntern () {
+function addIntern (name, id, email) {
     inquirer
     // User input prompts
     .prompt([
@@ -124,7 +124,7 @@ function addIntern () {
     // Evaluate user input (response)
     .then(response => {
         // create a new instance of a Intern object type passing user input as arguments into constructor
-        const employeeIntern = new Intern(response.name, response.id, response.email, response.school);
+        const employeeIntern = new Intern(name, id, email, response.school);
         // Add this Intern person object to the team array
         team.push(employeeIntern);
         // call function that prompts if user done or wants to add another employee

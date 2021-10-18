@@ -2,7 +2,16 @@ header {
     background-color: #E84856;
 }
 
-/* Card Styling */
+/* Links in Employee cards only */
+a {
+    text-decoration: none;
+}
+
+/* Employee information in card list */
+ul {
+    background-color: #FFFFFF;
+}
+
 .card-header {
     background-color: #0077F6;
     color: white;
@@ -10,7 +19,4 @@ header {
 
 .card-background {
     background-color: #F6F8F9;
-}
-ul {
-    background-color: #FFFFFF;
 }

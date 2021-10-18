@@ -1,10 +1,11 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "The TeamProfile Generator is a command line application that takes in user input and generates an interactable web application for all members of any given team. Using the commandline to generate team member profiles expedites the process and allows users to leverage stanard templates for required information, by role.",
   "main": "index.js",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "tests"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

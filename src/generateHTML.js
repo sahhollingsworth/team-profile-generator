@@ -23,9 +23,9 @@ function generateHTML(team) {
             <h1>My Team</h1>
         </div>
     </header>
-    <main>
-        <section class="container-fluid justify-content-center mt-3 pt-1">
-            <div class="container pt-2 justify-content-center">
+    <main class="container-fluid">
+        <section class="row justify-content-center mt-3 pt-1">
+            <div class="card-columns col-md-8">
                 ${renderEmployees(team)}
             </div>
         </section>
@@ -35,15 +35,13 @@ function generateHTML(team) {
 return html;
 }
 
-// add ${renderEmployees(team)} to html template where cards will be generated
-
 // funtion to create html cards from person object data in the team array
 function renderEmployees(team) {
     // create a empty array to store all cards created
     let employeeCards = [];
     // iterate through to team array to create a card for each employee and add it to the employeeCards array
     for (var i = 0; i < team.length; i++) {
-        employeeCards.push(`<div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
+        employeeCards.push(`<div class="card w-30 card-background  shadow shadow-offset-down-md shadow-offset-left-md">
             <div class="card-body card-header py-3">
                 <h5 class="card-title">${team[i].getName()}</h5>
                 <h6 class="card-title">${team[i].getRole()}</h6>
@@ -55,11 +53,15 @@ function renderEmployees(team) {
                     ${renderExtendedInfo(team[i])}
                 </ul>
             </div>
-        </div>`)
+        </div>
+        `)
     }
     // join creates a string of all card html by concatenating all of the elements in the employeeCards array. "" strips apostrophes, commas, and spaces between objects, in this case html
     return employeeCards.join("");
 }
+
+// Bootstrap Cards assume no specific width to start, so they’ll be 100% wide unless otherwise stated using w-30 to take 30% of container width.
+
 
 // function to add class-specific elements to the card list in addition to Employee elements. 'Employee' used as placeholder
 function renderExtendedInfo(Employee) {
