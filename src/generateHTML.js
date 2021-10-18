@@ -23,7 +23,25 @@ function generateHTML(team) {
             <h1>My Team</h1>
         </div>
     </header>
-    //////////////////////////////////////////////////////////////////
+    <main>
+        <section class="container-fluid justify-content-center mt-3 pt-1">
+            <div class="container pt-2 justify-content-center">
+                <div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
+                    <div class="card-body card-header py-3">
+                        <h5 class="card-title">Sarah Hollingsworth</h5>
+                        <h6 class="card-title">Bug Creator</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush border m-1">
+                            <li class="list-group-item">ID: 1</li>
+                            <li class="list-group-item">Email: whatever@gmail.com</li>
+                            <li class="list-group-item">Github: sahhollingsworth</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
 </body>
 </html>`
 return html;

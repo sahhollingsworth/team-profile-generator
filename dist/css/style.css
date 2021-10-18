@@ -1,3 +1,16 @@
 header {
     background-color: #E84856;
 }
+
+/* Card Styling */
+.card-header {
+    background-color: #0077F6;
+    color: white;
+}
+
+.card-background {
+    background-color: #F6F8F9;
+}
+ul {
+    background-color: #FFFFFF;
+}
