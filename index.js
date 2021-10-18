@@ -132,7 +132,6 @@ function addIntern () {
     })
 }
 
-
 // Function to either complete user prompts or restart add employee prompts to add another teammate to the team array
 function addAnother() {
     inquirer
@@ -152,16 +151,15 @@ function addAnother() {
         }
         // if no more employees to add, call function to build index.html with completed team array
         else {
-            buildPage("./dist/index.html", team);
+            buildPage("./dist/teampage.html", team);
         }
     })
 }
 
-// Should this be in the addAnother() function? pro: consolidates code that only occurs as a result of this function. cons: overly dense. The action in the function is independent of addAnother and could theoretically be called else on the future
-//
+// Using formatting in generateHTML.js, generate teamprofilepage.html file with data from the user response array (team array).
 function buildPage(file, data) {
-    // Create a file called PLACHOLDERTBD.HTML, adding the input data transformed by SOMEFILETBD.js formatting.
-    fs.writeFile(/*PLACHOLDERTBDe.html*/, /*formatfunctioninSOMEFILETBD(data)*/, function (error) {
+    // Create a file called teamprofilepage.html, adding the input data transformed by generateHTML.js formatting.
+    fs.writeFile("./dist/teamprofilepage.html", generateHTML(data), function (error) {
         // If file created successfull, notify user of success in the command line interface. If error, notify user in the command line interface.
         if(error) {
             console.log("An unknown error occurred.")
@@ -171,7 +169,6 @@ function buildPage(file, data) {
         }
     })
 }
-
 
 // Start app logic, assumption is user is Manager
 addManager();
