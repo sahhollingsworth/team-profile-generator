@@ -20,22 +20,22 @@ function addManager() {
         .prompt ([
             {
                 type: "input",
-                message: "What is the Manager's name?",
+                message: "What is the team Manager's name?",
                 name: "name",
             },
             {
                 type: "input",
-                message: "What is the Manager's employee ID number?",
+                message: "What is the team Manager's employee ID number?",
                 name: "employeeId",
             },
             {
                 type: "input",
-                message: "What is the Manager's email address?",
+                message: "What is the team Manager's email address?",
                 name: "email",
             },
             {
                 type: "input",
-                message: "What is the Manager's ID office number?",
+                message: "What is the team Manager's office number?",
                 name: "officeNum",
             },
         ])
