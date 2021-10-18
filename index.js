@@ -40,7 +40,7 @@ function addManager() {
             },
         ])
         .then(response => {
-            // create a Manager object with information from prompt
+            // create a new instance of a Manager object type passing user input as arguments into constructor
             const employeeManager = new Manager(response.name, response.id, response.email, response.officeNum);
             // Add this Manager person object to the team array
             team.push(employeeManager);
@@ -101,7 +101,7 @@ function addEngineer () {
     ])
     // Evaluate user input (response)
     .then(response => {
-        // create a Engineer object with information from prompt
+        // create a new instance of a Engineer object type passing user input as arguments into constructor
         const employeeEngineer = new Engineer(response.name, response.id, response.email, response.githubUser);
         // Add this Engineer person object to the team array
         team.push(employeeEngineer);
@@ -123,7 +123,7 @@ function addIntern () {
     ])
     // Evaluate user input (response)
     .then(response => {
-        // create a Intern object with information from prompt
+        // create a new instance of a Intern object type passing user input as arguments into constructor
         const employeeIntern = new Intern(response.name, response.id, response.email, response.school);
         // Add this Intern person object to the team array
         team.push(employeeIntern);

@@ -65,6 +65,9 @@ Run this application by:
 * [Inquirer.js](https://www.npmjs.com/package/inquirer) - Package for common interactive command line user interfaces. 
 * [NPM](https://www.npmjs.com/) - Node package manager, used in conjunction with JS and Inquirer to support application logic and Command Line interface.
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/javascript)
+* [Bootstrap](https://getbootstrap.com/docs/4.0/layout/overview/)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [Git](https://git-scm.com/doc) - Version control system to track changes to source code
 * [GitHub](https://docs.github.com/en) - Hosts the code repository
 
