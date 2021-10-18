@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 // Access file system to write data to (or create) html file
 const fs = require("fs");
 // Responsible for formatting HTML file output with user input values
-const generateHTMLTemplate = require("./lib/generateHTMLTemplate.js");
+const generateHTML = require("./lib/generateHTML.js");
 
 // Calling the team person object modules
 const Employee = require("./lib/Employee");
