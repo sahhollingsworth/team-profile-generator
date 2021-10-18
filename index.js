@@ -3,12 +3,12 @@ const inquirer = require("inquirer");
 // Access file system to write data to (or create) html file
 const fs = require("fs");
 // Responsible for formatting HTML file output with user input values
-const generateHTML = require("./lib/generateHTML.js");
+const generateHTML = require("./src/generateHTML.js");
 
 // Calling the team person object modules
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
-const Engineer = require("/lib/Engineer");
+const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 // Empty Array to store all team person objects created from user input
@@ -30,7 +30,7 @@ function addManager() {
             },
             {
                 type: "input",
-                message: "What is the Manager's ID email address?",
+                message: "What is the Manager's email address?",
                 name: "email",
             },
             {

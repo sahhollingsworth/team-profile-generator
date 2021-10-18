@@ -26,7 +26,7 @@ function generateHTML(team) {
     <main>
         <section class="container-fluid justify-content-center mt-3 pt-1">
             <div class="container pt-2 justify-content-center">
-                ${renderEmployee(team)}
+                ${renderEmployees(team)}
             </div>
         </section>
     </main>
@@ -38,19 +38,27 @@ return html;
 // add ${renderEmployees(team)} to html template where cards will be generated
 
 // funtion to create html cards from person object data in the team array
-function renderEmployee(team) {
-`<div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
-    <div class="card-body card-header py-3">
-        <h5 class="card-title">${team[i].getName()}</h5>
-        <h6 class="card-title">${team[i].getRole()}</h6>
-    </div>
-    <div class="card-body">
-        <ul class="list-group list-group-flush border m-1">
-            <li class="list-group-item">ID: ${team[i].getId()}</li>
-            <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}">${team[i].getEmail()}</a></li>
-        </ul>
-    </div>
-</div>`
+function renderEmployees(team) {
+    // create a empty array to store all cards created
+    let employeeCards = [];
+    // iterate through to team array to create a card for each employee and add it to the employeeCards array
+    for (var i = 0; i < team.length; i++) {
+        employeeCards.push(`<div class="card card-background shadow shadow-offset-down-md shadow-offset-left-md">
+            <div class="card-body card-header py-3">
+                <h5 class="card-title">${team[i].getName()}</h5>
+                <h6 class="card-title">${team[i].getRole()}</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush border m-1">
+                    <li class="list-group-item">ID: ${team[i].getId()}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${team[i].getEmail()}">${team[i].getEmail()}</a></li>
+                    ${renderExtendedInfo(team[i])}
+                </ul>
+            </div>
+        </div>`)
+    }
+    // join creates a string of all card html by concatenating all of the elements in the employeeCards array. "" strips apostrophes, commas, and spaces between objects, in this case html
+    return employeeCards.join("");
 }
 
 // function to add class-specific elements to the card list in addition to Employee elements. 'Employee' used as placeholder
@@ -62,7 +70,7 @@ function renderExtendedInfo(Employee) {
             return `<li class="list-group-item">Office Number: ${Employee.getofficeNumber()}</li>`
         // if role = Engineer then add the githubUser element as a li
         case "Engineer":
-            return `<li class="list-group-item">Github: <a href="https://github.com/${Employee.getGithubUser()}" target="_blank">${teamMember.getGithubUser()}</a></li>`
+            return `<li class="list-group-item">Github: <a href="https://github.com/${Employee.getGithubUser()}" target="_blank">${Employee.getGithubUser()}</a></li>`
         // if role = Intern then add the school element li
         case "Intern":
             return `<li class="list-group-item">School: ${Employee.getSchool()}</li>`
