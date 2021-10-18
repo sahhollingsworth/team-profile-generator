@@ -159,7 +159,7 @@ function addAnother() {
 // Using formatting in generateHTML.js, generate teamprofilepage.html file with data from the user response array (team array).
 function buildPage(file, data) {
     // Create a file called teamprofilepage.html, adding the input data transformed by generateHTML.js formatting.
-    fs.writeFile("./dist/teamprofilepage.html", generateHTML(data), function (error) {
+    fs.writeFile("./dist/teampage.html", generateHTML(data), function (error) {
         // If file created successfull, notify user of success in the command line interface. If error, notify user in the command line interface.
         if(error) {
             console.log("An unknown error occurred.")
