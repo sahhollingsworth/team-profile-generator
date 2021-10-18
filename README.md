@@ -60,6 +60,12 @@ Run this application by:
 
 2. Once in the root folder in your command line interface, start the application by entering `node index.js`
 
+## Tests
+To run unit tests:
+1. Cloning the repository to your local machine.
+
+2. Once in the root folder in your command line interface, `npm install --save-dev jest`
+
 ## Built with
 * [Jest javascript testing framework](https://jestjs.io/)
 * [Inquirer.js](https://www.npmjs.com/package/inquirer) - Package for common interactive command line user interfaces. 
