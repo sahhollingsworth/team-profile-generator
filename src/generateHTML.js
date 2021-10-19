@@ -43,7 +43,7 @@ function renderEmployees(team) {
     // iterate through to team array to create a card for each employee and add it to the employeeCards array
     for (var i = 0; i < team.length; i++) {
         employeeCards.push(`
-                <div class="card col-md-3 my-3 mx-1 card-background shadow shadow-offset-down-md shadow-offset-left-md">
+                <div class="card col-md-3 my-3 mx-1 card-background shadow">
                     <div class="card-body card-header py-3">
                         <h5 class="card-title">${team[i].getName()}</h5>
                         <h6 class="card-title">${generateRoleIcon(team[i])} ${team[i].getRole()}</h6>
