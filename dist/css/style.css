@@ -20,3 +20,10 @@ ul {
 .card-background {
     background-color: #F6F8F9;
 }
+
+/* Parent container for cards */
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
