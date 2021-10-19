@@ -36,12 +36,12 @@ function addManager() {
             {
                 type: "input",
                 message: "What is the team Manager's office number?",
-                name: "officeNum",
+                name: "officeNumber",
             },
         ])
         .then(response => {
             // create a new instance of a Manager object type passing user input as arguments into constructor
-            const employeeManager = new Manager(response.name, response.id, response.email, response.officeNum);
+            const employeeManager = new Manager(response.name, response.id, response.email, response.officeNumber);
             // Add this Manager person object to the team array
             team.push(employeeManager);
             // call function that prompts if user done or wants to add another employee

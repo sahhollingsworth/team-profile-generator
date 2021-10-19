@@ -88,7 +88,7 @@ function renderExtendedInfo(Employee) {
     switch(Employee.getRole()) {
         // if role = Manager then do add the officeNumber element li
         case "Manager":
-            return `<li class="list-group-item">Office Number: ${Employee.getofficeNumber()}</li>`
+            return `<li class="list-group-item">Office Number: ${Employee.getOfficeNumber()}</li>`
         // if role = Engineer then add the githubUser element as a li
         case "Engineer":
             return `<li class="list-group-item">Github: <a href="https://github.com/${Employee.getGithubUser()}" target="_blank">${Employee.getGithubUser()}</a></li>`
